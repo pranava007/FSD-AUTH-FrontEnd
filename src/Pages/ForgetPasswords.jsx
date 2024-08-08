@@ -14,7 +14,7 @@ const ForgetPasswords = () => {
       const response = await axios.post("http://localhost:5000/api/auth/forget-password", { email });
       if (response.data.status === 200) {
         toast.success(response.data.message);
-        navigate('/login');
+        navigate('/signin');
       }
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {

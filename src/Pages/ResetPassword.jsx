@@ -15,7 +15,7 @@ const ResetPassword = () => {
       const response = await axios.post(`http://localhost:5000/api/auth/reset-password/${id}/${token}`, { password });
       if (response.data.status === 200) {
         toast.success(response.data.message);
-        navigate('/login');
+        navigate('/signin');
       }
     } catch (error) {
       console.log(error);
