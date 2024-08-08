@@ -15,7 +15,7 @@ const SignIn = () => {
         e.preventDefault()
         const payload = {email,password}
 
-        await axios.post('http://localhost:5000/api/auth/login',payload)
+        await axios.post('https://fsd-auth-backend.onrender.com/api/auth/login',payload)
         .then((res)=>{
             toast.success(res.data.message)
             setEmail('')

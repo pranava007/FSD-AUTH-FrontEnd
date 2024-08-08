@@ -12,7 +12,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/api/auth/reset-password/${id}/${token}`, { password });
+      const response = await axios.post(`https://fsd-auth-backend.onrender.com/api/auth/reset-password/${id}/${token}`, { password });
       if (response.data.status === 200) {
         toast.success(response.data.message);
         navigate('/signin');

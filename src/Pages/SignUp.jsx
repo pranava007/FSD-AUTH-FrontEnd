@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,7 +16,7 @@ const SignUp = () => {
     const handleSubmit = async(e)=>{
         e.preventDefault()
         const payload = {username,email,password}
-        await axios.post('http://localhost:5000/api/auth/register',payload)
+        await axios.post('https://fsd-auth-backend.onrender.com/api/auth/register',payload)
         .then((res)=>{
             toast.success(res.data.message)    
             setUserName('')
