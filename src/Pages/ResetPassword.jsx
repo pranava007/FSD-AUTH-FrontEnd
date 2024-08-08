@@ -13,10 +13,10 @@ const ResetPassword = () => {
     e.preventDefault();
     try {
       const response = await axios.post(`https://fsd-auth-backend.onrender.com/api/auth/reset-password/${id}/${token}`, { password });
-      if (response.data.status === 200) {
+     
         toast.success(response.data.message);
         navigate('/signin');
-      }
+     
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
